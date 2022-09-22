@@ -9,9 +9,9 @@ namespace Calculator
 {
     internal class Program
     {
-        static int GetFactorial(int Num)
+        static double GetFactorial(double Num)
         {
-            int Factorial = 1;
+            double Factorial = 1;
             
                 for (int i = 2; i <= Num; i++)
                 {
@@ -60,6 +60,37 @@ namespace Calculator
                             break;
                     }
                 }
+                else if (Action > 5 && Action < 9)
+                {
+                    Console.WriteLine("Введите число: ");
+                    double Num = Convert.ToDouble(Console.ReadLine());
+                    switch (Action)
+                    {
+                        case 6:
+                            Console.WriteLine($"Квадратный корень из {Num} = {Math.Sqrt(Num)} ");
+                            break;
+                        case 7:
+                            Console.WriteLine($"1% от {Num} = {Num / 100} ");
+                            break;
+                        case 8:
+                            if (Num > 0)
+                            {
+                                Console.WriteLine($"Факториал от {Num} = {GetFactorial(Num)}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Ошибка");
+                            }
+
+                            break;
+                        case 9:
+                            Console.WriteLine("Вы успешно вышли из программы");
+                            break;
+                        default:
+                            Console.WriteLine("Ошибка");
+                            break;
+                    }
+                }
                 else if (Action == 5)
                 {
                     Console.WriteLine("Введите число: ");
@@ -67,39 +98,6 @@ namespace Calculator
                     Console.WriteLine("Введите степень, в которую вы хотите возвести число: ");
                     int N = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine($"Результат возведения {Num} в степень {N} = {Math.Pow(Num, N)} ");
-                }
-                else if (Action == 6)
-                {
-                    Console.WriteLine("Введите число: ");
-                    int Num = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine($"Квадратный корень из {Num} = {Math.Sqrt(Num)} ");
-                }
-                else if (Action == 7)
-                {
-                    Console.WriteLine("Введите число: ");
-                    double Num = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine($"1% от {Num} = {Num / 100} ");
-                }
-                else if (Action == 8)
-                {
-                    Console.WriteLine("Введите число: ");
-                    int Num = Convert.ToInt32(Console.ReadLine());
-                    if (Num > 0)
-                    {
-                        Console.WriteLine($"Факториал от {Num} = {GetFactorial(Num)}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Ошибка");
-                    }
-                }
-                else if (Action == 9)
-                {
-                    Console.WriteLine("Вы успешно вышли из программы");
-                }
-                else
-                {
-                    Console.WriteLine("Ошибка");
                 }
                 Console.WriteLine("Хотите попробовать еще раз?(Да/Нет) ");
                 Again = Console.ReadLine();
