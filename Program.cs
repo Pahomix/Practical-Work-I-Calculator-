@@ -60,7 +60,7 @@ namespace Calculator
                             break;
                     }
                 }
-                else if (Action > 5 && Action < 9)
+                else if (Action > 5 && Action <= 8)
                 {
                     Console.WriteLine("Введите число: ");
                     double Num = Convert.ToDouble(Console.ReadLine());
@@ -83,9 +83,6 @@ namespace Calculator
                             }
 
                             break;
-                        case 9:
-                            Console.WriteLine("Вы успешно вышли из программы");
-                            break;
                         default:
                             Console.WriteLine("Ошибка");
                             break;
@@ -98,6 +95,10 @@ namespace Calculator
                     Console.WriteLine("Введите степень, в которую вы хотите возвести число: ");
                     int N = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine($"Результат возведения {Num} в степень {N} = {Math.Pow(Num, N)} ");
+                }
+                else if (Action == 9)
+                {
+                    Console.WriteLine("Вы успешно вышли из программы");
                 }
                 Console.WriteLine("Хотите попробовать еще раз?(Да/Нет) ");
                 Again = Console.ReadLine();
