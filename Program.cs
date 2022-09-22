@@ -38,37 +38,27 @@ namespace Calculator
                               "\n 9. Выйти из программы ");
                 int Action = Convert.ToInt32(Console.ReadLine());
 
-                if (Action == 1)
+                if (Action <= 4)
                 {
-                    Console.WriteLine("Введите первое число: ");
+                    Console.WriteLine("Введите первое число");
                     double Num1 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите второе число: ");
+                    Console.WriteLine("Введите второе число");
                     double Num2 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine($"Сумма: {Num1} + {Num2} = {Num1 + Num2} ");
-                }
-                else if (Action == 2)
-                {
-                    Console.WriteLine("Введите первое число: ");
-                    double Num1 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите второе число: ");
-                    double Num2 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine($"Разность: {Num1} - {Num2} = {Num1 - Num2} ");
-                }
-                else if (Action == 3)
-                {
-                    Console.WriteLine("Введите первое число: ");
-                    double Num1 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите второе число: ");
-                    double Num2 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine($"Произведение: {Num1} * {Num2} = {Num1 * Num2} ");
-                }
-                else if (Action == 4)
-                {
-                    Console.WriteLine("Введите первое число: ");
-                    double Num1 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите второе число: ");
-                    double Num2 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine($"Результат деления: {Num1} / {Num2} = {Num1 / Num2} ");
+                    switch (Action)
+                    {
+                        case 1:
+                            Console.WriteLine($"Сумма: {Num1} + {Num2} = {Num1 + Num2} ");
+                            break;
+                        case 2:
+                            Console.WriteLine($"Разность: {Num1} - {Num2} = {Num1 - Num2} ");
+                            break;
+                        case 3:
+                            Console.WriteLine($"Произведение: {Num1} * {Num2} = {Num1 * Num2} ");
+                            break;
+                        case 4:
+                            Console.WriteLine($"Результат деления: {Num1} / {Num2} = {Num1 / Num2} ");
+                            break;
+                    }
                 }
                 else if (Action == 5)
                 {
